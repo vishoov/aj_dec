@@ -1,1 +1,42 @@
 backend developement
+
+
+prerequisits of backend developement
+
+
+1. JAVASCRIPT FUNDAMENTALS
+
+- ES6+ features -> arrow functions, destructuring, modular structure, import exports
+- Asynchronous programming -> handles the javascript's single threaded nature 
+- functional programming -> event drivem architecture 
+- Errror handling -> applications should be robust by handling errors
+
+
+Environment and tools
+
+NodeJS -> javascript runtime npm or node
+Version Control -> git basics
+terminal/cli -> navigation, executing scripts, running our application
+POSTMAN -> api testing tool 
+
+HTTP FUNDAMENTALS
+
+methods
+CRUD operations
+Request response 
+client server architecture 
+content types json form data url encoded multi part
+
+
+RESTful api
+
+Representational State Transfer -> is an architectural style for developing APIs to ensure theyre scalable
+ and secure
+
+ REST principles: 
+
+    - resouce based -> routes should be identified through their resource names
+    - statelenesss-> NEVER Store any data on the server or each request should contain all the information required for it to work 
+    - Uniform interface -> users/, products/
+    
+
