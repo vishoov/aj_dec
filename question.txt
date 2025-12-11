@@ -1,0 +1,4 @@
+recently react deprecated create-react-app 
+and permanently suggested developers to use vite
+
+can you tell why this happened?

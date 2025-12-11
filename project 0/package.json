@@ -1,0 +1,21 @@
+{
+  "name": "project-0",
+  "version": "1.0.0",
+  "description": "this is a starter project for nodejs",
+  "keywords": [
+    "tutorial",
+    "acciojob",
+    "MAANG"
+  ],
+  "license": "ISC",
+  "author": "Vishoo",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

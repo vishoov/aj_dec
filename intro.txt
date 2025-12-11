@@ -8,8 +8,9 @@ prerequisits of backend developement
 
 - ES6+ features -> arrow functions, destructuring, modular structure, import exports
 - Asynchronous programming -> handles the javascript's single threaded nature 
-- functional programming -> event drivem architecture 
-- Errror handling -> applications should be robust by handling errors
+- functional programming -> event driven architecture 
+- Error handling -> applications should be robust by handling errors
+
 
 
 Environment and tools
@@ -19,24 +20,23 @@ Version Control -> git basics
 terminal/cli -> navigation, executing scripts, running our application
 POSTMAN -> api testing tool 
 
-HTTP FUNDAMENTALS
+HTTP FUNDAMENTALS (networking protocol)
 
-methods
-CRUD operations
-Request response 
+methods (GET, POST, PUT, PATCH, DELETE, etc)
+CRUD operations 
+Request response cycle 
 client server architecture 
 content types json form data url encoded multi part
 
 
-RESTful api
+RESTful architecture -> API Design arch. 
 
-Representational State Transfer -> is an architectural style for developing APIs to ensure theyre scalable
- and secure
+Representational State Transfer -> is an architectural style for developing APIs to ensure theyre scalable and secure
 
  REST principles: 
 
-    - resouce based -> routes should be identified through their resource names
-    - statelenesss-> NEVER Store any data on the server or each request should contain all the information required for it to work 
+    - resource based -> routes should be identified through their resource names
+    - stateleness-> NEVER Store any data on the server or each request should contain all the information required for it to work 
     - Uniform interface -> users/, products/
     
 

@@ -1,0 +1,26 @@
+nodejs is a javascript runtime environment that allows us to execute javascript code on the server side independently
+
+- non blocking io operations for scalability 
+- even driven architecture 
+
+for setting up a nodejs project:
+
+1. terminal -> npm init  = initialises the node package manager in the directory
+2. follow the steps and fill in the details 
+
+
+
+types
+- commonjs (ES5)
+- module (ES6+)
+
+npm run -> it tells the npm to run a script 
+
+
+define custom scripts 
+
+start = node index.js
+
+
+package.json -> it stores the specifications of the projects
+package-lock.json -> stores the current stable versions of the dependencies 

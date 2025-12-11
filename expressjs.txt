@@ -1,0 +1,57 @@
+Express.js is a 
+
+- fast  
+- unopinionated 
+- minimalist 
+
+web framework that works best with node.js that helps in simplifying server side routing 
+
+1. terminal -> npm i express
+2. inside the endpoint file 
+
+import express from 'express'
+
+- to include all the express features 
+- create an instance of express application 
+
+
+
+
+Routing ->  define how the backend application will respond to client requests at specific endpoints (URIs - uniform resource identifier) with specific HTTP methods 
+
+- method
+- route 
+- data 
+- headers 
+
+
+
+Middlewares -> functions that are executed in our application in MIDDLE of the request response cycle 
+
+
+the request and response objects are the references to the data that we have recieved from the usr (req) and the data that we respond with (res)
+
+
+req 
+
+.json -> 
+
+req example 
+
+{
+    "headers":{ 
+        this object contains the specifications of the request 
+        type 
+        security
+        authorization
+        ip 
+        host name 
+        allowed headers
+    },
+    "body":{
+        user specific data 
+    }
+}
+
+
+res
