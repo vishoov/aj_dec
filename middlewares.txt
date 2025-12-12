@@ -1,0 +1,36 @@
+Middlewares in express js are functions that get executed in middle of the application's
+Request-Response Cycle i.e. once the server recieves a request on a certain route, it will go through the middlewares if there are any and then it will be sent to the handler functions
+
+
+
+// Middlewares Example
+// 1. Middleware has access to the request response objects
+// 2. next keyword = whenever this next() keyword is called inside the middleware, it marks its completion
+
+Recieve the Req  -> middleware1 -> middleware2 -> middleware3 -> handler function 
+on the route 
+
+Middleware sits between the incoming request and the final route handler
+this enables a sequential behaviour of funtions (sequential pipeline)
+
+1. Application level middleware
+
+app.METHOD() or app.use()
+
+Example -> app.use(express.json())
+
+//json -> objects 
+
+
+2. Router level middleware
+
+whenever we want to build modular applications where there are routes in multiple files, we can use router middleware provided by express js to define routes in those files as well where the app instance is not declared
+
+3. Custom middleware
+
+4. in built middlewares (named middlewares)
+express.json()
+
+5. Third Party Middlewares
+
+morgan loggin middleware

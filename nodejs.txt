@@ -1,5 +1,6 @@
 nodejs is a javascript runtime environment that allows us to execute javascript code on the server side independently
 
+- for 24X7 uptime
 - non blocking io operations for scalability 
 - even driven architecture 
 
@@ -8,6 +9,7 @@ for setting up a nodejs project:
 1. terminal -> npm init  = initialises the node package manager in the directory
 2. follow the steps and fill in the details 
 
+shortcut command -> npm init -y = say yes to all default values in the package.json file 
 
 
 types
@@ -24,3 +26,10 @@ start = node index.js
 
 package.json -> it stores the specifications of the projects
 package-lock.json -> stores the current stable versions of the dependencies 
+
+
+NODEMON used for enhancing development experience 
+
+it restarts the server whenever there is any change
+
+npm i nodemon

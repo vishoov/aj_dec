@@ -1,0 +1,83 @@
+let blogs = [
+  {
+    id: 1,
+    title: "Introduction to Node.js",
+    content: "Node.js is a JavaScript runtime...",
+    author: "John Doe",
+    createdAt: "2024-12-12T10:30:00Z"
+  }
+];
+
+
+1. GET /api/blogs
+Fetch and return all blog posts from the array
+
+Return status code: 200
+
+Response: Array of blog objects
+
+
+
+2. GET /api/blogs/:id
+Fetch a specific blog post by ID
+
+Return status code: 200 if found, 404 if not found​
+
+Response: Single blog object or error message
+
+3. POST /api/blogs
+Create a new blog post​
+
+Auto-generate unique ID and timestamp
+
+Validate required fields: title, content, author​
+
+Add the blog to the global array
+
+Return status code: 201
+
+Response: Created blog object
+
+4. PUT /api/blogs/:id 
+Update an existing blog post by ID​
+
+Allow partial updates (update only provided fields)
+
+Return status code: 200 if updated, 404 if not found
+
+Response: Updated blog object
+
+5. DELETE /api/blogs/:id
+Delete a specific blog post by ID​
+
+Remove from the global array
+
+Return status code: 200 if deleted, 404 if not found
+
+Response: Success message with deleted blog details
+
+
+
+
+Middleware Implementation
+Logging  Middleware 
+Create middleware to log each incoming request with:​
+
+HTTP method
+
+Request URL
+
+Timestamp
+
+Response status code
+
+
+
+
+
+DOWNLOAD MONGODB
+
+https://www.mongodb.com/try/download/community
+
+
+install mongodb compass -> SELECT THIS!!!

@@ -14,7 +14,7 @@ import express from 'express'
 - to include all the express features 
 - create an instance of express application 
 
-
+const app = express()
 
 
 Routing ->  define how the backend application will respond to client requests at specific endpoints (URIs - uniform resource identifier) with specific HTTP methods 
@@ -28,8 +28,9 @@ Routing ->  define how the backend application will respond to client requests a
 
 Middlewares -> functions that are executed in our application in MIDDLE of the request response cycle 
 
+WHY EXPRESS.JS? 
 
-the request and response objects are the references to the data that we have recieved from the usr (req) and the data that we respond with (res)
+the request and response objects are the references to the data that we have recieved from the user (req) and the data that we respond with (res)
 
 
 req 
@@ -54,4 +55,17 @@ req example
 }
 
 
-res
+res -> is used for sending HTTP response with various content types 
+
+MVC architecture -> for increasing the scalability 
+Model View Controller 
+
+modular programming in js 
+
+
+structuring our project files 
+
+
+
+middlewares 
+mini project 

@@ -1,12 +1,34 @@
-import express, { request } from 'express';
+import express from 'express';
 //es6+ syntax
 
 const app = express();
 //create an instance of the express application (server)
 
 
+//LOGGING MIDDLEWARE
+const loggingMiddleware = (req, res, next)=>{
+    const url = req.url;
+    const method = req.method;
+    const time = new Date().toLocaleTimeString();
+    const ip = req.ip
+
+    console.log(`${url}: ${method} at ${time} from ${ip}`)
+    next()
+
+}
 
 
+import routes from './routes.js'
+
+import morgan from 'morgan';
+
+app.use(morgan('dev'))
+
+
+app.use(routes)
+
+
+app.use(loggingMiddleware)
 
 //define a route 
 // http://localhost:3000/home GET respond with a text of "Welcome to home route"
@@ -94,9 +116,95 @@ app.all('/multiple', (req, res)=>{
 })
 
 
+// Response Object
+
+app.get("/response", (req, res)=>{
+    //plain text res.send("Hello world")
+    //HTML response res.send("<h1 style='color:white; background-color:blue'>Title</h1><br><p>This is the html sent from the route")
+    //object
+    // res.send({ message:"Hello world", data:{name:"ABC",   age:999 }})
+
+    // res.status(201).send("Data")
+
+    // res.json({
+    //     message:"Success",
+    //     data: "users"
+    // })
+
+    res.redirect('/multiple')
+
+
+})
+
+app.get("/", (req, res)=>{
+    res.send("Welcome to the ROOT ROUTE")
+})
+
+
+app.set('view engine', 'ejs')
+app.get('/users', (req, res) => {
+    const users = [
+      { id: 1, name: 'Alice', email: 'alice@example.com' },
+      { id: 2, name: 'Bob', email: 'bob@example.com' },
+      { id: 3, name: 'Charlie', email: 'charlie@example.com' }
+    ];
+    // users.ejs -> template
+
+    //res.render is used for rendering embedded templates 
+    res.render('users', { 
+      title: 'User List',
+      users: users
+    });
+  });
 
 
 
+app.get("/sendFile", (req, res) => {
+    res.sendFile('index.html', {
+        root: import.meta.dirname
+    })
+});
+
+
+
+// Middlewares Example
+// 1. Middleware has access to the request response objects
+// 2. next keyword = whenever this next() keyword is called inside the middleware, it marks its completion
+const middleware1 = (req, res, next)=>{
+    console.log("middleware reached")
+    next()
+}
+
+
+const mw2 = (req, res, next)=>{
+    console.log("Middleware 2 reached")
+    next()
+}
+
+//app.use method allowes us to implement any function before ALL the FOLLOWING ROUTES
+app.use(
+    middleware1
+)
+
+app.get('/middlewareEnabled', mw2, (req, res)=>{
+    console.log("Handler function executed")
+    res.send("Handler Function Executed")
+})
+
+app.get('/mw2', (req, res)=>{
+    res.send("Middleware 2 route handler reached")
+})
+
+
+
+
+
+
+
+
+
+
+// port listener always comes in the end of the index file 
 //port listener 
 //amazon-backend.com/signup 
 // document.addEventListener('event-name', CB Func)
