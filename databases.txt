@@ -1,0 +1,102 @@
+Databases -> databases are structured systems for storing, managing and maintaining data efficiently
+
+DB 
+-> relational DB
+-> non -relational DB
+
+Relational DB
+
+dbs that organize the data in form of tables (rows and columns), Each table stores similar category of data (ex data of all users in an application will be stores in same table)
+this establishes structure and integrity in the data 
+
+
+key characteristics 
+
+-> Schema-based structure = we require a predefined schema before creating a table that includes fixed table sturtcure, data types and constraints (like length, inclusion of certain characters) before data insertion. this ensures data integrity and consistency 
+
+-> ACID compliance -> atomicity, consistency, isolation and durability
+
+-> data normalization -> to maintain the integrity of data (and usability) relational databases normalise the data to make it more consistent throughout all the tables 
+
+-> SQL (structured query language) -> sql serves as a standard interface for databases' operations providing a standard way of doing CRUD on relational databases 
+
+
+Strengths 
+
+-> data integrity = provides more accuracy and prevents mismatch of data 
+-> complex relationships = whenever we want to extract data based on complex relationships relational databases excel in that
+-> indexing and performance = relational databases optimize query performance by enabling rapid data retrieval without having to scan whole tables 
+
+
+
+Non relational dbs
+
+these databases are designed for unstructured, semi structured or RAPIDLY EVOLVING DATA
+this happens because of flexible schemas
+these databses prioritize scalability, performance and flexibility 
+
+
+types of non-relational dbs 
+
+-> document based dbs -> mongodb (semi structured)
+-> key-value based dbs -> redis (caching)
+-> graph based - neo4j
+-> column family -> apache cassandra 
+
+
+features -> 
+
+- Schema-less design 
+- support for complex queries (aggregation: mongodb specific)
+- ACID compliances 
+- javascript like language 
+
+-> eventual consistency = Availability or partition tolerance 
+
+
+
+Aspect                Relational                        Non Relational 
+
+Data Model          Tables with fixed schema            json like documents 
+
+Schema              predefined, rigid and required      schema-less, dynamic structure
+                    before data insertion 
+
+Data structure      highly structured data with         semi-structured & unstructured 
+                    strict data types
+
+query language      SQL                                 MongoDB Query Language (MQL), json 
+                                                        based queries 
+
+ACID compliance     fully ACID compliant                multi-document ACID compliance 
+
+performance         excellent for highly complex        optimized for high speed data ops
+                    queries, it is slower with
+                    large scale datasets 
+
+use cases           banking, finance, UPI,              real time data, CRMs, mobile apps, 
+                    e-commerce transactions             quick large scale systems 
+
+Cost at scale       expensive in scaling                cost effective
+
+Scalability         vertical scaling (worse)            horizontal scaling (sharding) better
+
+
+
+
+
+development and production 
+
+1. MongoDB Atlas -> online tool using which we can create cloud databases
+2. Mongo shell -> Command line interface 
+3. MongoDB Compass -> GUI (graphical user interface)
+
+
+Mongoose!
+
+https://www.mongodb.com/try/download/community
+https://mongoosejs.com/docs/guide.html 
+
+
+
+https://www.mongodb.com/products/platform/atlas-product-tour
