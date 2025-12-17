@@ -49,7 +49,7 @@ features ->
 - Schema-less design 
 - support for complex queries (aggregation: mongodb specific)
 - ACID compliances 
-- javascript like language 
+- javascript like querying language 
 
 -> eventual consistency = Availability or partition tolerance 
 

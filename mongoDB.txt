@@ -1,0 +1,9 @@
+mongoshell
+
+show dbs ->  shows all the active databases in your cluster 
+
+use DB_NAME -> this switches to 'DB_NAME' database 
+
+db.createCollection('collection_name') -> this creates a new collection 
+
+https://www.mongodb.com/docs/manual/crud/ 

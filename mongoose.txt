@@ -1,0 +1,14 @@
+mongoose 
+
+object data moddeling library in javascript that is designed for mongoDB in node.js
+
+SCHEMA!!!! 
+mongoose will bridge the gap between mongoDB's schema-less nature and the need for data structuring or data validation in our applications. 
+
+This is important because we will be able to enforce data structuring in mongoDB documents, which helps us in validating the data making sure that there is no data inconsistency 
+
+it simplifies database operations by providing a model-based approach for CRUD operations 
+
+
+Everything in mongoose will start with a schema
+
