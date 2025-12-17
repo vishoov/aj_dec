@@ -7,7 +7,7 @@ app.use(express.json())
 // mongoose code starts here 
 import mongoose from 'mongoose';
 // uri -> uniform resource identifier 
-
+const uri = "uri removed for security reasons"
 
 // mongodb://localhost:27017/myDatabaseName
 // mongoose.connect() -> this method is used for connecting to the database
