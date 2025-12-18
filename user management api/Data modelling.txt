@@ -1,0 +1,46 @@
+Data modelling is used for defining structure of the data, including data types, validation rules, default values, and behaviour of documents in a specific mongoDB collection.
+
+Schema is the foundation of implementing business logic in our applications 
+
+const userSchema = new mongoose.Schema({
+  name:String,
+  email:String,
+  age:Number
+})
+
+{
+    name:"AJ",
+    email:"aj@aj.com",
+    age:1000
+}
+
+this is a basic user schema that defines the structure of each user's info that will be stored in the database 
+
+
+Schema Type options 
+
+type: String, 
+or Number, Array, Boolean, Relation 
+
+required = boolean value that checks if the field is MANDATORY or not 
+
+unique = takes boolean value to make sure there is no duplicacy of any value present in the field 
+
+trim = removes unecessary spaces from starting and ending of the string 
+
+lowercase = boolean value, when true, it will convert the data to lowercase before saving 
+
+String specific rules 
+    minLength:4,
+    maxLength:30
+
+immutable:true will FIX the data, meaning it cannot be changed once created
+
+
+//regex - regular expressions 
+
+//email -> @, .com or .in .org 
+
+Number specific rules 
+min:18, 
+max:200,

@@ -1,0 +1,21 @@
+C - Create
+
+1. insertOne and insertMany
+
+2. Model.create(data)
+
+3. const user = new User(data);
+    await user.save();
+
+
+
+R - Read
+
+
+U - Update
+
+
+
+D - Delete
+
+

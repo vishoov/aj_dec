@@ -4,10 +4,18 @@ import userRoutes from './view/user.routes.js'
 
 app.use(express.json())
 
+import dotenv from 'dotenv';
+dotenv.config();
+
 // mongoose code starts here 
 import mongoose from 'mongoose';
 // uri -> uniform resource identifier 
-const uri = "uri removed for security reasons"
+const uri = process.env.MONGOURI
+
+
+
+
+//NEVER INCLUDE YOUR URIS IN THE CODE!!!!!!!!!!!!
 
 // mongodb://localhost:27017/myDatabaseName
 // mongoose.connect() -> this method is used for connecting to the database
