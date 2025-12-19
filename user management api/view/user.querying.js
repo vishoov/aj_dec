@@ -347,3 +347,13 @@ router.delete("/deleteUser", async (req, res)=>{
 
 
 export default router;
+
+
+
+// 1st page => first 10
+// 2nd page => second 10 
+
+// 100
+// 1
+
+// 2 - 11-20
