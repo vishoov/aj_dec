@@ -11,7 +11,7 @@ dotenv.config();
 import mongoose from 'mongoose';
 // uri -> uniform resource identifier 
 const uri = process.env.MONGOURI
-
+import queryRoutes from "./view/user.querying.js"
 
 
 
@@ -38,7 +38,7 @@ app.get("/", (req, res)=>{
 
 //this is used for api versioning 
 app.use("/v1", userRoutes)
-
+app.use("/query", queryRoutes)
 // app.use("/v2", newRoutes)
 
 app.listen(3000, ()=>{

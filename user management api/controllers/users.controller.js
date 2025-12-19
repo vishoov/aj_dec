@@ -49,9 +49,9 @@ const login = async (req, res)=>{
     try{
         //login = email and password 
         const { email, password } = req.body;
-
-        const user = await User.findOne({email:email}).select('+password');
-
+        //TDZ
+        const user = await User.findOne({email:email}).select('+password')
+        console.log(user)
         if(!user){
             res.status(404).json({
                 message:"User not found"
@@ -86,6 +86,9 @@ const logout = (req, res)=>{
 
 const singleUser = (req, res)=>{
     const id = req.params.id;
+
+
+
 
     res.send(`welcome to the user's profile with id: ${id}`)
 }

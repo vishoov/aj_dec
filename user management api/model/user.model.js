@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema({
         type:Number,
         min:18, 
         max:200,
-        default:18
+        // default:18
         
     },
     password:{
