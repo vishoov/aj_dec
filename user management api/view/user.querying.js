@@ -46,7 +46,7 @@ router.get("/username", async (req, res)=>{
 // >= -> $gte
 // <= -> $lte
 // != -> $ne
-//  == -> $eq
+//  == -> $eq  (default behaviour)
 router.get("/greaterThan/:value", async (req, res)=>{
     try{
         const ageValue = req.params.value;
@@ -279,7 +279,8 @@ router.put("/ageFix", async (req, res)=>{
             age:{
                 $exists:false
             }
-        },{
+        },
+        {
             age:18
         }
     )
@@ -339,6 +340,24 @@ router.delete("/deleteUser", async (req, res)=>{
         res.status(500).json({
             message:err.message
         })
+    }
+})
+
+
+router.get("/pagination", async (req, res)=>{
+    try{
+        const page = parseInt(req.query.page);
+        const limit = parseInt(req.query.limit) ||10;
+        const skip = (page-1)*limit;
+
+        const users = await User.find().limit(limit).skip(skip)
+
+        res.json({
+            users
+        })
+    }
+    catch(err){
+        res.status(500).send(err.message)
     }
 })
 

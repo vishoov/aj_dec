@@ -1,7 +1,7 @@
 import express from 'express'
 const app = express();
 import userRoutes from './view/user.routes.js'
-
+import aggregationRoutes from './view/user.aggregation.js'
 app.use(express.json())
 
 import dotenv from 'dotenv';
@@ -39,6 +39,7 @@ app.get("/", (req, res)=>{
 //this is used for api versioning 
 app.use("/v1", userRoutes)
 app.use("/query", queryRoutes)
+app.use("/aggregate", aggregationRoutes)
 // app.use("/v2", newRoutes)
 
 app.listen(3000, ()=>{
