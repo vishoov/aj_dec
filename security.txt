@@ -1,0 +1,83 @@
+Sceurity Threats
+
+
+1. XSS -> cross site scripting 
+2. DB Injection Attacks
+3. DDoS Attacks -> Distributed Denial of Service  -> bottle neck of our server 
+4. Insecure databases -> information encryption and network access on the database
+5. Server Security 
+6. Broken Authentication done 
+7. Encryption of sensitive database
+8. dotenv environment security 
+
+Security Best Practices 
+
+1. Encryption -> encrypt any sensitive information, so that even if the database is compromised, the information is still secure
+
+password ->9fgogf80te08pib;kfbidg08t08g
+
+BCrypt -> npm i bcrypt
+
+signup / login ->  encrypt   -> DB 
+
+
+2. Rate Limiting 
+
+Prevents DDoS Attack -> limit the number of requests that you allow the server to respond to in a given frame of time
+
+npm i express-rate-limiter
+
+
+3. Monitoring or logging 
+
+help us create a record of the requests that we have recieved on our server and then we can have a record of these requests
+
+
+if our server crashes so we can identify which was the last request that we received before the server crashed
+
+
+4. API Authentication
+
+
+JWT -> Json Web Token
+this is used to secure protected routes in the API
+JWT is a compact, json friendly, lightweight, and highly secure token that helps 
+in securing the APIs and implementing role based Authentication
+
+
+xxxxx.yyyyy.zzzzz
+xxxx-> header -> this contains technical information about token and its creation
+for example algorithm, type, expires in
+yyyyy-> payload -> this is the information that is specific to the users, this is used to verify which token is for which users
+zzzzz-> signature-> signature is like salt that is added to the string to make it even harder to decode 
+
+Implementation 
+
+this will be implemented thrugh a middleware 
+
+npm i jsonwebtoken
+
+5. XSS cross site scripting 
+
+
+sanitize the inputs so that any script (malicious sent by hacker) should not be executed on the server
+
+
+
+6. Database security -> 
+
+    modify the IP Access list 
+
+    model
+
+7. Server Security 
+
+    IP Access -> only allowing those users who are in the IP access list 
+
+    amazon -> backend -> front end 
+
+    CORS-> Cross Origin Resource Sharing -> this specifies to what client our server will be allowed to respond 
+
+8. Environment Security 
+
+    dotenv -> protects and hides our API keys, DB URIs
