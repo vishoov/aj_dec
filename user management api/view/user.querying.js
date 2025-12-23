@@ -307,7 +307,11 @@ router.put("/findByIdAndUpdate/:id", async (req, res)=>{
             }
             
         }, {
-            new:true
+            //options
+            new:true,
+            runValidators:true
+            // whenever you are updating an object, you can make the information go through the schema all over again so that any error can be identified 
+
         })
 
         res.json({user})

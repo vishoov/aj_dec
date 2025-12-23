@@ -1,5 +1,7 @@
 // Mongoose Aggregation Pipelines
 
+
+// NON DESTRUCTIVE in nature -> they work temporarily 
 // Aggregation pipelines are sequential (step by step) processing and transformation of data that helps us in implementing
 
 // Efficient Data processing : the transformations that we implement happen on the Database level (no need to bring all the data to the server)
@@ -61,6 +63,7 @@ router.get("/aggregate", async (req, res)=>{
 router.get('/match', async (req, res)=>{
     try{
         const pipeline = [
+            // stage of pipeline
             {
                 $match:{
                     age:{

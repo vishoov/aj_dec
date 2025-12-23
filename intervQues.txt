@@ -1,0 +1,26 @@
+// students collection
+{
+  _id: ObjectId("..."),
+  name: "Priya Sharma",
+  email: "priya@example.com",
+  age: 21,
+  course: "BCA",
+  semester: 5,
+  grade: "A",
+  isActive: true,
+  city: "Delhi"
+}
+
+
+Create a route that returns the average age of students who are enrolled in each course.
+
+router.get("/stats/by-course", async (req, res)=>{
+    //write you code here 
+})
+
+data:{
+    "course":"BCA",
+    "averageAge":number,
+    minAge, maxAge,
+    totalStudents 
+}
