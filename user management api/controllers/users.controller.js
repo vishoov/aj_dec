@@ -1,5 +1,5 @@
 import User from "../model/user.model.js"
-
+import { createToken } from "../security/jwt.auth.js";
 
 const users = async (req, res)=>{
     try{
@@ -31,12 +31,15 @@ const signup = async (req, res)=>{
     
     const user = new User(userData); //this step implements the validation on the data
     await user.save(); //send the data to the db
-
+    
+    
+    const token = await createToken(user)
 
     console.log(user)
     res.json({
         message:"User created successfully",
-        user
+        user,
+        token
     })
 }
 catch(err){
@@ -58,15 +61,31 @@ const login = async (req, res)=>{
             })
         }
 
-        if(user.password!==password){
-            res.status(400).json({
-                message:"Password doesnt match"
+        // if(user.password!==password){
+        //     res.status(400).json({
+        //         message:"Password doesnt match"
+        //     })
+        // }
+
+        const passwordMatch = user.comparePassword(password)
+
+        if(!passwordMatch){
+            return res.status(400).json({
+                message:"Password is incorrect"
             })
         }
 
+
+        //after verification 
+        //we'll create a token
+        const token = await createToken(user)
+
+        console.log(token)
+
         res.status(200).json({
             message:"Successfully logged in",
-            user
+            user,
+            token
         })
 
     }

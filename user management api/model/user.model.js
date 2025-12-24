@@ -1,6 +1,7 @@
 // Schema -> Collection 
 
 import mongoose from 'mongoose';
+import bcrypt from 'bcrypt';
 
 const userSchema = new mongoose.Schema({
     username:{
@@ -57,7 +58,7 @@ const userSchema = new mongoose.Schema({
                     if(charCode>=48 && charCode<=57){
                         number=true
                     }
-                    console.log(hasUpperCase, hasLowerCase, number)
+
                     
                     
                 }
@@ -81,6 +82,36 @@ const userSchema = new mongoose.Schema({
 {
     timestamps:true
 })
+
+
+userSchema.pre('save', async function(){
+    try{
+        //user -> extract password -> encrypt it -> replace it 
+
+        // password + salt = encrypted password
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(this.password, salt);
+        this.password = hashedPassword;
+
+    }
+    catch(err){
+        throw new Error(err.message)
+    }
+})
+// comparing hashed password with plain password
+//custom method for userSchema 
+// user.comparePassword(plainPassword)
+userSchema.methods.comparePassword = async function(plainPassword){
+    try{
+    return await bcrypt.compare(plainPassword, this.password)
+    }
+    catch(err){
+        throw err
+    }
+}
+
+
+
 
 // collection name, schema 
 const User = mongoose.model("User", userSchema)

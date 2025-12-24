@@ -1,0 +1,18 @@
+API Authentication or user auth is process of verifying the users, whether they are a part of the application or not, and making them staying LOGGED IN
+
+Token based authentication so that 
+
+we are able to segregate usage of these following routes
+
+public routes -> where no authentication is required
+protected routes-> where only authenticated users are allowed 
+
+
+signup, login -> public routes 
+
+Why do we need token based authentication 
+1. Stateless API -> we cannot store any info (this is why session based auth is no longed used)
+2. RESTful -> each route is independant 
+
+
+

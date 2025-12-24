@@ -1,0 +1,14 @@
+Data encryption 
+
+converting plain data into encrypted 
+it converts the password into a long long humanly impossible to read string
+
+
+/signup
+/changePassword
+Client ---------Req----> Server ----Model---->DB
+                                          ^
+                                        encrypting it 
+
+
+bcrypt 
