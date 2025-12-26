@@ -114,6 +114,6 @@ userSchema.methods.comparePassword = async function(plainPassword){
 
 
 // collection name, schema 
-const User = mongoose.model("User", userSchema)
+const User =  mongoose.model('User', userSchema)
 // User -> model 
 export default User

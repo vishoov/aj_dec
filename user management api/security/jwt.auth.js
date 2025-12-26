@@ -1,9 +1,10 @@
 import jwt from 'jsonwebtoken'
 
-//creating
+import dotenv from 'dotenv'
+dotenv.config()
 
 
-const secretKey = "secretkeyisaverysecurekeythatweonlyknowabout"
+const secretKey = process.env.SECRET_JWT
 const createToken = async (user)=>{
 try{
     const token = jwt.sign(

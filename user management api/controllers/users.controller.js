@@ -1,5 +1,7 @@
 import User from "../model/user.model.js"
 import { createToken } from "../security/jwt.auth.js";
+import xss from 'xss'
+
 
 const users = async (req, res)=>{
     try{
@@ -23,8 +25,11 @@ const users = async (req, res)=>{
 
 const signup = async (req, res)=>{
     try{
-    const userData = req.body;
+    let userData = req.body;
+    
 
+    //this xss(data) will enforce any script to be converted into a string format
+    
     console.log(userData)
     // const user = await User.insertOne(userData);
     // const user = await User.create(userData)
@@ -52,6 +57,11 @@ const login = async (req, res)=>{
     try{
         //login = email and password 
         const { email, password } = req.body;
+
+        if(typeof email !== 'string'){
+            return res.send("No scripts allowed!!!! ")
+        }
+
         //TDZ
         const user = await User.findOne({email:email}).select('+password')
         console.log(user)
