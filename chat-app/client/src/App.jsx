@@ -8,12 +8,13 @@ function App() {
   const [message, setMessage] = useState("")
   const [messages, setMessagges]= useState([]);
   const [reciever, setReceiver] = useState("")
+  const [roomName, setRoomName] = useState("")
   const socket = useMemo(()=>io('http://localhost:3000/'), [])
 
   useEffect(()=>{
     socket.on("connect", ()=>{
       console.log("socket connected to the server")
-      console.log(socket.id)
+      console.log(socket)
       setsocketId(socket.id)
 
     })
@@ -36,7 +37,12 @@ function App() {
       console.log(`message sent: ${message}, to ${reciever}`)
   }
 
+const joinRoom = (e)=>{
+  e.preventDefault();
 
+  socket.emit('join_room', roomName)
+
+}
   return (
     <>
       <div style={{
@@ -117,6 +123,49 @@ function App() {
             Send Message
           </button>
         </form>
+
+        <form onSubmit={joinRoom} style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          width: '100%',
+          maxWidth: '400px',
+        }}>
+          <input 
+            type='text' 
+            onChange={(e) => setRoomName(e.target.value)} 
+            placeholder='Please enter your room name' 
+            style={{
+              width: '100%',
+              padding: '10px',
+              fontSize: '1rem',
+              border: '1px solid #ccc',
+              borderRadius: '5px',
+              marginBottom: '15px',
+              outline: 'none',
+            }}
+          />
+               
+          <button 
+            type='submit' 
+            style={{
+              padding: '10px 20px',
+              fontSize: '1rem',
+              color: '#fff',
+              backgroundColor: '#007BFF',
+              border: 'none',
+              borderRadius: '5px',
+              cursor: 'pointer',
+              transition: 'background-color 0.3s ease',
+            }}
+            onMouseOver={(e) => e.target.style.backgroundColor = '#0056b3'}
+            onMouseOut={(e) => e.target.style.backgroundColor = '#007BFF'}
+          >
+            Join Room
+          </button>
+        </form>
+
+
 
             {messages.map((msg, index)=>{
               return <p key={index} >{msg}</p>

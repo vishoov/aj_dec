@@ -45,6 +45,14 @@ io.on('connection', (socket)=>{
 
     //all the socket server goes here
 
+    //joining a room
+    socket.on('join_room', (roomName)=>{
+        console.log(`socket with id ${socket.id} joined room: ${roomName}`)
+        socket.join(roomName)
+    })
+
+
+
     socket.on("message", ({message, reciever})=>{
         console.log(message, reciever)
         io.to(reciever).emit("forward", message)
