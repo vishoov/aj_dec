@@ -1,0 +1,29 @@
+C - Create
+
+1. insertOne and insertMany
+
+2. Model.create(data)
+
+3. const user = new User(data);
+    await user.save();
+
+
+
+R - Read
+
+1. await User.find()
+
+Querying 
+
+filter method in arrays 
+
+Deep diving in querying through filters in mongodb
+
+
+U - Update
+
+
+
+D - Delete
+
+

@@ -63,6 +63,10 @@ npm i jsonwebtoken
 sanitize the inputs so that any script (malicious sent by hacker) should not be executed on the server
 
 
+npm i xss
+or
+input sanitization
+
 
 6. Database security -> 
 
@@ -78,6 +82,17 @@ sanitize the inputs so that any script (malicious sent by hacker) should not be 
 
     CORS-> Cross Origin Resource Sharing -> this specifies to what client our server will be allowed to respond 
 
+    Fullstack
+
+    front end           back end
+    (UI)                (Data Mgmnt)
+    192.168.0.1         190.129.1.1
+            -------------> the request should be from our front end only 
+
+
+    
+
 8. Environment Security 
 
     dotenv -> protects and hides our API keys, DB URIs
+
